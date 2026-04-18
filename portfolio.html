@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Najmi Zulhusni — Integration Developer specializing in API integrations, workflow automation, and AI-powered solutions.">
+    <meta property="og:title" content="Najmi Zulhusni | Integration Developer">
+    <meta property="og:description" content="I help businesses eliminate manual technical debt through robust API connections and AI automation.">
+    <title>Najmi Zulhusni | Integration Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            blue: '#0071E3',
+                            dark: '#1D1D1F',
+                            sub: '#6E6E73',
+                            bg: '#F5F5F7',
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 2px 20px rgba(0,0,0,0.04)',
+                        'card-hover': '0 8px 40px rgba(0,0,0,0.10)',
+                        'dark-lg': '0 20px 60px rgba(0,0,0,0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F5F5F7; color: #1D1D1F; }
+
+        .glass-nav {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        /* Scroll progress */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, #0071E3, #5E5CE6);
+            z-index: 9999; width: 0%;
+            transition: width 0.08s linear;
+        }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+        }
+        .reveal.visible { opacity: 1; transform: none; }
+        .reveal-d1 { transition-delay: 0.08s; }
+        .reveal-d2 { transition-delay: 0.16s; }
+        .reveal-d3 { transition-delay: 0.24s; }
+
+        /* Card hover */
+        .card-lift { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1); }
+        .card-lift:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
+
+        /* Pulsing green dot */
+        @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+        .pulse { animation: pulse-dot 2s ease-in-out infinite; }
+
+        /* Tag chip */
+        .chip {
+            display: inline-flex; align-items: center;
+            padding: 3px 10px; border-radius: 9999px;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.04em; text-transform: uppercase;
+        }
+
+        /* Project icon area */
+        .proj-icon {
+            height: 160px; border-radius: 1rem; margin-bottom: 1.25rem;
+            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+        }
+
+        /* Active nav state */
+        .nav-link { position: relative; }
+        .nav-link.active { color: #1D1D1F !important; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #F5F5F7; }
+        ::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased">
+
+<div id="progress-bar"></div>
+
+<!-- ── NAV ─────────────────────────────────────────────── -->
+<nav class="fixed w-full top-0 z-50 glass-nav border-b border-gray-200/60">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="#" class="flex items-center gap-2.5 text-[16px] font-black tracking-tight text-[#1D1D1F]">
+            <div class="w-7 h-7 rounded-lg bg-[#0071E3] flex items-center justify-center text-white text-[10px] font-black select-none">NZ</div>
+            Najmi Zulhusni
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#6E6E73]">
+            <a href="#experience" class="nav-link hover:text-[#1D1D1F] transition-colors">Experience</a>
+            <a href="#projects"   class="nav-link hover:text-[#1D1D1F] transition-colors">Projects</a>
+            <a href="#workflow"   class="nav-link hover:text-[#1D1D1F] transition-colors">Methodology</a>
+            <a href="#skills"     class="nav-link hover:text-[#1D1D1F] transition-colors">Skills</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <a href="https://github.com/najmizulhusni" target="_blank" rel="noopener"
+               class="hidden md:flex w-9 h-9 items-center justify-center rounded-full text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-gray-100 transition-all"
+               aria-label="GitHub Profile">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#contact"
+               class="hidden md:inline-flex bg-[#1D1D1F] text-white px-5 py-2 rounded-full text-[13px] font-semibold hover:bg-black transition-colors">
+                Let's Connect
+            </a>
+            <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg text-[#1D1D1F] hover:bg-gray-100 transition-colors focus:outline-none"
+                    aria-label="Toggle menu">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu"
+         class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl
+                flex-col items-center py-8 gap-6 text-[15px] font-medium text-[#6E6E73]">
+        <a href="#experience" class="mobile-link hover:text-[#1D1D1F] transition-colors">Experience</a>
+        <a href="#projects"   class="mobile-link hover:text-[#1D1D1F] transition-colors">Projects</a>
+        <a href="#workflow"   class="mobile-link hover:text-[#1D1D1F] transition-colors">Methodology</a>
+        <a href="#skills"     class="mobile-link hover:text-[#1D1D1F] transition-colors">Skills</a>
+        <a href="https://github.com/najmizulhusni" target="_blank" class="mobile-link hover:text-[#1D1D1F] transition-colors">GitHub</a>
+        <a href="#contact" class="mobile-link bg-[#1D1D1F] text-white px-8 py-3 rounded-full font-semibold">Let's Connect</a>
+    </div>
+</nav>
+
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="max-w-4xl mx-auto px-6 pt-44 pb-24 text-center flex flex-col items-center">
+
+    <!-- Avatar -->
+    <div class="reveal mb-7">
+        <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#0071E3] to-[#5E5CE6] flex items-center justify-center text-white text-2xl font-black shadow-lg select-none">
+            NZ
+        </div>
+    </div>
+
+    <!-- Status badge -->
+    <div class="reveal reveal-d1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200/80 shadow-sm text-[12px] font-semibold text-[#6E6E73] mb-8 tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-green-500 pulse"></span>
+        Johor Bahru &nbsp;·&nbsp; Open to Relocate &nbsp;·&nbsp; Open to Opportunities
+    </div>
+
+    <h1 class="reveal reveal-d1 text-[3.25rem] sm:text-[4.5rem] md:text-[5.5rem] font-black text-[#1D1D1F] tracking-tighter leading-[1.0] mb-6">
+        Integration<br/><span class="text-[#6E6E73] font-extralight">Developer.</span>
+    </h1>
+
+    <p class="reveal reveal-d2 text-lg md:text-xl text-[#6E6E73] font-light max-w-xl leading-relaxed mb-10">
+        I eliminate manual bottlenecks by engineering robust API connections, automating enterprise workflows, and deploying practical AI solutions.
+    </p>
+
+    <!-- CTA -->
+    <div class="reveal reveal-d2 flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-12">
+        <a href="#experience"
+           class="bg-[#1D1D1F] text-white px-9 py-3.5 rounded-full text-[15px] font-semibold transition-all hover:bg-black hover:scale-[1.02] shadow-md">
+            View My Work
+        </a>
+        <a href="mailto:najmisapuan02@gmail.com"
+           class="bg-white text-[#1D1D1F] border border-gray-200 px-9 py-3.5 rounded-full text-[15px] font-semibold transition-all hover:bg-gray-50 hover:scale-[1.02] shadow-sm">
+            Get in Touch
+        </a>
+    </div>
+
+    <!-- Social row -->
+    <div class="reveal reveal-d3 flex flex-wrap justify-center items-center gap-5 text-[#6E6E73]">
+        <a href="https://www.linkedin.com/in/najmi-zulhusni/" target="_blank" rel="noopener"
+           class="flex items-center gap-1.5 text-[13px] font-medium hover:text-[#0071E3] transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+        </a>
+        <span class="text-gray-300 hidden sm:block">|</span>
+        <a href="https://github.com/najmizulhusni" target="_blank" rel="noopener"
+           class="flex items-center gap-1.5 text-[13px] font-medium hover:text-[#1D1D1F] transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+        </a>
+        <span class="text-gray-300 hidden sm:block">|</span>
+        <a href="tel:+60111458752"
+           class="flex items-center gap-1.5 text-[13px] font-medium hover:text-[#1D1D1F] transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            011-1145 8752
+        </a>
+    </div>
+</section>
+
+
+<!-- ── STATS BAR ─────────────────────────────────────────── -->
+<div class="bg-white border-y border-gray-200/70">
+    <div class="max-w-4xl mx-auto px-6 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+            <div class="reveal text-center px-4 sm:px-8">
+                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">3+</p>
+                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">iPaaS Platforms</p>
+            </div>
+            <div class="reveal reveal-d1 text-center px-4 sm:px-8">
+                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">5+</p>
+                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Projects Built</p>
+            </div>
+            <div class="reveal reveal-d2 text-center px-4 sm:px-8 mt-6 md:mt-0">
+                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">20%</p>
+                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Manual Time Cut</p>
+            </div>
+            <div class="reveal reveal-d3 text-center px-4 sm:px-8 mt-6 md:mt-0">
+                <p class="text-3xl font-black text-green-600 tracking-tight">#1</p>
+                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Best Project Q4</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ── EXPERIENCE ────────────────────────────────────────── -->
+<section id="experience" class="py-28 max-w-5xl mx-auto px-6">
+    <div class="reveal text-center mb-16">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Career</p>
+        <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Experience</h2>
+    </div>
+
+    <div class="relative border-l-2 border-gray-200 ml-4 md:ml-8 space-y-10">
+
+        <!-- Current role -->
+        <div class="relative pl-8 md:pl-12">
+            <!-- Active dot with ring -->
+            <div class="absolute -left-[11px] top-10 w-5 h-5 rounded-full bg-[#0071E3] border-4 border-[#0071E3] flex items-center justify-center">
+                <div class="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+
+            <div class="reveal bg-white rounded-[2rem] p-8 md:p-12 shadow-card card-lift border border-gray-100">
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 bg-green-50 text-green-700 border border-green-100 rounded-full uppercase tracking-wider mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 pulse"></span>
+                    Current Role
+                </span>
+
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-[35%] shrink-0">
+                        <p class="text-[#0071E3] font-bold text-[11px] uppercase tracking-widest mb-2">Aug 2025 – Present</p>
+                        <h3 class="text-2xl font-bold mb-1.5 tracking-tight text-[#1D1D1F]">Data & Integration Developer</h3>
+                        <p class="text-[#6E6E73] text-base font-medium">PS Global Consulting</p>
+                    </div>
+
+                    <div class="lg:w-[65%]">
+                        <ul class="space-y-4 text-[#6E6E73] text-[15px] font-light leading-relaxed mb-8">
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">API Workflow Design:</strong> End-to-end API integrations across Workato, Latenode, and Celigo with OAuth 2.0 / Token-Based auth and robust error handling.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Enterprise Data Sync:</strong> Build inbound/outbound interfaces syncing data between NetSuite and SAP with strict validation logic to ensure consistency.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">PoC & Collaboration:</strong> Develop Proofs of Concept, gather stakeholder requirements, and support full UAT cycles.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Technical Documentation:</strong> Author comprehensive docs covering payload structures, field mapping tables, and endpoint specs for compliance.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="chip bg-blue-50 text-blue-700 border border-blue-100">Workato</span>
+                            <span class="chip bg-blue-50 text-blue-700 border border-blue-100">Latenode</span>
+                            <span class="chip bg-blue-50 text-blue-700 border border-blue-100">Celigo</span>
+                            <span class="chip bg-gray-100 text-gray-700">REST APIs</span>
+                            <span class="chip bg-gray-100 text-gray-700">NetSuite</span>
+                            <span class="chip bg-gray-100 text-gray-700">OAuth 2.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous role -->
+        <div class="relative pl-8 md:pl-12 group">
+            <div class="absolute -left-[11px] top-10 w-5 h-5 bg-white border-4 border-gray-200 rounded-full group-hover:border-[#0071E3] transition-colors duration-300"></div>
+
+            <div class="reveal bg-white rounded-[2rem] p-8 md:p-12 shadow-card card-lift border border-gray-100">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-[35%] shrink-0">
+                        <p class="text-[#6E6E73] font-bold text-[11px] uppercase tracking-widest mb-2">Jul 2024 – Jan 2025</p>
+                        <h3 class="text-2xl font-bold mb-1.5 tracking-tight text-[#1D1D1F] leading-tight">Customer Service Efficiency Intern</h3>
+                        <p class="text-[#6E6E73] text-base font-medium">SLB (Schlumberger) · KLSSC</p>
+                    </div>
+
+                    <div class="lg:w-[65%]">
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+                                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight mb-0.5">-20%</p>
+                                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest">Manual Time</p>
+                            </div>
+                            <div class="bg-green-50 rounded-2xl p-5 border border-green-100">
+                                <p class="text-xl font-black text-green-700 mb-0.5">🏆 Winner</p>
+                                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest">Best Project Q4</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-[#6E6E73] text-[15px] font-light leading-relaxed">
+                            <li class="flex gap-3">
+                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">SUPRA Project:</strong> Contributed to direct reduction of past-due USD, earning Best Project at the KLSSC Q4 Town Hall.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Automation Engine:</strong> Built automated Power BI dashboards and Excel macros that eliminated manual data tracking entirely.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Process Improvement:</strong> Assisted with Procure-to-Pay (P2P) and supply chain optimizations to improve data accuracy across teams.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="chip bg-gray-100 text-gray-700">Power BI</span>
+                            <span class="chip bg-gray-100 text-gray-700">Excel VBA</span>
+                            <span class="chip bg-gray-100 text-gray-700">P2P Process</span>
+                            <span class="chip bg-gray-100 text-gray-700">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ── PROJECTS ──────────────────────────────────────────── -->
+<section id="projects" class="py-28 bg-white border-y border-gray-200/70">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="reveal text-center mb-16">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Portfolio</p>
+            <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Projects</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Project 1 -->
+            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-[2rem] p-8 flex flex-col card-lift">
+                <div class="proj-icon bg-gradient-to-br from-purple-100 to-blue-100 text-4xl">🏡</div>
+                <div class="flex-1">
+                    <h3 class="text-[18px] font-bold mb-2 tracking-tight text-[#1D1D1F]">Lavender Villa Melaka</h3>
+                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
+                        Full-stack homestay booking engine with real-time pricing, secure database management, and automated WhatsApp guest notifications.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">React</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Tailwind</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Supabase</span>
+                    </div>
+                </div>
+                <a href="https://www.lavendervillamelaka.com/" target="_blank" rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-gray-200 text-[#1D1D1F] font-semibold text-[14px] hover:bg-gray-50 transition-colors shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    View Live Site
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="reveal reveal-d1 bg-[#F5F5F7] border border-gray-200/80 rounded-[2rem] p-8 flex flex-col card-lift">
+                <div class="proj-icon bg-gradient-to-br from-orange-100 to-yellow-100 text-4xl">🧾</div>
+                <div class="flex-1">
+                    <h3 class="text-[18px] font-bold mb-2 tracking-tight text-[#1D1D1F]">SenangPOS</h3>
+                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
+                        Custom POS web app for local vendors. Replaces manual Excel ledgers with digital sales tracking, reports, and interactive charts.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">JavaScript</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Chart.js</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Power BI</span>
+                    </div>
+                </div>
+                <a href="https://senangpos.vercel.app/" target="_blank" rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-gray-200 text-[#1D1D1F] font-semibold text-[14px] hover:bg-gray-50 transition-colors shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    View Live Site
+                </a>
+            </div>
+
+            <!-- Project 3 - AI Bot -->
+            <div class="reveal reveal-d2 bg-[#1D1D1F] border border-gray-800 rounded-[2rem] p-8 flex flex-col card-lift">
+                <div class="proj-icon bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-900/30 text-4xl" style="border-radius:1rem;">🤖</div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-[18px] font-bold tracking-tight text-white">SME-Go AI Bot</h3>
+                        <span class="chip bg-blue-500/20 text-blue-300 border border-blue-500/30">AI</span>
+                    </div>
+                    <p class="text-gray-400 text-[14px] font-light leading-relaxed mb-5">
+                        Telegram AI bot that parses natural language orders into structured JSON, auto-generates LHDN-compliant invoices with DuitNow QR, and syncs to Google Sheets.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">LangChain</span>
+                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Claude API</span>
+                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Telegram</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 py-3 px-4 rounded-xl bg-gray-900/60 border border-gray-700 font-mono text-[12px] text-gray-400">
+                    <span class="text-green-400 font-bold">›</span> "Ali order 50 nasi" → <span class="text-blue-400">JSON</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ── METHODOLOGY ───────────────────────────────────────── -->
+<section id="workflow" class="py-28 max-w-5xl mx-auto px-6">
+    <div class="reveal text-center mb-16">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Process</p>
+        <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F] mb-3">Engineering Methodology</h2>
+        <p class="text-lg text-[#6E6E73] font-light max-w-xl mx-auto">How I transform manual business bottlenecks into fully autonomous systems.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal bg-white p-8 rounded-[2rem] border border-gray-100 shadow-card card-lift">
+            <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center text-[15px] font-black text-[#6E6E73] mb-6">01</div>
+            <h3 class="text-[17px] font-bold text-[#1D1D1F] mb-3">Isolate the Gap</h3>
+            <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed">
+                Identify heavy, manual processes. E.g., a business owner wastes hours manually typing PDF invoices and updating Excel sheets for every WhatsApp order.
+            </p>
+        </div>
+
+        <div class="reveal reveal-d1 bg-white p-8 rounded-[2rem] border border-gray-100 shadow-card card-lift">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[15px] font-black text-[#0071E3] mb-6">02</div>
+            <h3 class="text-[17px] font-bold text-[#1D1D1F] mb-3">AI Logic Layer</h3>
+            <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-4">
+                Build a Telegram AI bot that parses natural language orders into structured JSON data instantly.
+            </p>
+            <div class="bg-[#F5F5F7] p-3 rounded-xl border border-gray-100 font-mono text-[11px] text-[#6E6E73]">
+                "Ali order 50 nasi" → <span class="text-[#0071E3]">&#123; qty: 50 &#125;</span>
+            </div>
+        </div>
+
+        <div class="reveal reveal-d2 bg-[#1D1D1F] p-8 rounded-[2rem] shadow-card card-lift">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-[15px] font-black text-[#0071E3] mb-6">03</div>
+            <h3 class="text-[17px] font-bold text-white mb-3">Automate Everything</h3>
+            <p class="text-gray-400 text-[14px] font-light leading-relaxed mb-6">
+                LangChain + Claude API auto-generates LHDN-compliant invoices with DuitNow QR codes and updates Google Sheets — zero manual input.
+            </p>
+            <div class="flex gap-2 flex-wrap">
+                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">LangChain</span>
+                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Claude API</span>
+                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Apps Script</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ── SKILLS ────────────────────────────────────────────── -->
+<section id="skills" class="py-28 bg-white border-t border-gray-200/70">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="reveal text-center mb-16">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Toolkit</p>
+            <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Capabilities</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+            <!-- Education — wide -->
+            <div class="reveal md:col-span-7 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift flex flex-col justify-between">
+                <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Education</p>
+                    <h3 class="text-xl font-bold text-[#1D1D1F] mb-0.5">B.S. Computer Science</h3>
+                    <p class="text-[#1D1D1F] font-medium text-[14px] mb-1">Graphics &amp; Multimedia Software</p>
+                    <p class="text-[#6E6E73] text-[13px] mb-5">Universiti Teknologi Malaysia (UTM) · Oct 2021 – Oct 2025</p>
+                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
+                        My CS + multimedia background is a unique edge. I build intuitive Power BI dashboards and UIs that make complex data easy to digest — not just backend pipelines.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Data Engineering</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Software Design</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">UI / UX</span>
+                </div>
+            </div>
+
+            <!-- Core Stack — narrow -->
+            <div class="reveal reveal-d1 md:col-span-5 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-5">Core Stack</p>
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Integration (iPaaS)</p>
+                        <p class="text-[13px] text-[#6E6E73] font-light">Workato · Latenode · Celigo · UiPath</p>
+                    </div>
+                    <div class="h-px bg-gray-200"></div>
+                    <div>
+                        <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Data & Analytics</p>
+                        <p class="text-[13px] text-[#6E6E73] font-light">Power BI · SQL · Excel · Data Modeling</p>
+                    </div>
+                    <div class="h-px bg-gray-200"></div>
+                    <div>
+                        <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Enterprise Systems</p>
+                        <p class="text-[13px] text-[#6E6E73] font-light">NetSuite · SAP · REST APIs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Integration -->
+            <div class="reveal md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">AI Integration</p>
+                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
+                    Integrating powerful AI models into daily workflows for document extraction and automation.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">LangChain</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Claude API</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">OpenAI</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Ollama</span>
+                </div>
+            </div>
+
+            <!-- App Dev -->
+            <div class="reveal reveal-d1 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">App Development</p>
+                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
+                    Building functional tools, POS systems, and dashboards with modern frameworks.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">React</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">JavaScript</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Tailwind</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Supabase</span>
+                </div>
+            </div>
+
+            <!-- Google Ecosystem -->
+            <div class="reveal reveal-d2 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">Google Ecosystem</p>
+                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
+                    Deep expertise in custom tools and seamless integrations across Google Workspace.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">AppSheet</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Apps Script</span>
+                    <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Looker Studio</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ── CONTACT ───────────────────────────────────────────── -->
+<section id="contact" class="py-32 bg-[#1D1D1F]">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <div class="reveal">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-500 mb-4">Get In Touch</p>
+            <h2 class="text-5xl md:text-6xl font-black mb-5 tracking-tight text-white">Let's build.</h2>
+            <p class="text-gray-400 text-lg mb-12 font-light">Open to full-time roles and consulting projects. I respond within 24 hours.</p>
+        </div>
+
+        <div class="reveal reveal-d1 flex flex-col sm:flex-row justify-center items-stretch gap-4">
+            <a href="mailto:najmisapuan02@gmail.com"
+               class="bg-white text-[#1D1D1F] px-8 py-4 rounded-full font-bold text-[15px] hover:scale-[1.03] transition-transform shadow-lg">
+                najmisapuan02@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/najmi-zulhusni/" target="_blank" rel="noopener"
+               class="flex items-center justify-center gap-2 border border-gray-700 text-white px-8 py-4 rounded-full font-bold text-[15px] hover:bg-gray-800 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/najmizulhusni" target="_blank" rel="noopener"
+               class="flex items-center justify-center gap-2 border border-gray-700 text-white px-8 py-4 rounded-full font-bold text-[15px] hover:bg-gray-800 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer class="py-10 bg-white border-t border-gray-200/70">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-md bg-[#0071E3] flex items-center justify-center text-white text-[9px] font-black select-none">NZ</div>
+            <span class="text-[15px] font-bold text-[#1D1D1F]">Najmi Zulhusni</span>
+        </div>
+        <p class="text-[13px] text-[#6E6E73]">© 2026 Muhammad Najmi Zulhusni · Integration Developer</p>
+        <div class="flex items-center gap-4">
+            <a href="https://www.linkedin.com/in/najmi-zulhusni/" target="_blank" rel="noopener"
+               class="text-[#6E6E73] hover:text-[#0071E3] transition-colors" aria-label="LinkedIn">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/najmizulhusni" target="_blank" rel="noopener"
+               class="text-[#6E6E73] hover:text-[#1D1D1F] transition-colors" aria-label="GitHub">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    // ── Mobile menu
+    const mobileBtn  = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+    });
+
+    // ── Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+        progressBar.style.width = pct + '%';
+    }, { passive: true });
+
+    // ── Scroll reveal (IntersectionObserver)
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Active nav link on scroll
+    const sections  = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('nav .nav-link');
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active', 'text-[#1D1D1F]'));
+                const active = document.querySelector(`nav .nav-link[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    sections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
