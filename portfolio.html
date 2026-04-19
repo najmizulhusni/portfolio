@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Najmi Zulhusni — Integration Developer specializing in API integrations, workflow automation, and AI-powered solutions.">
+    <meta name="description" content="Najmi Zulhusni — Integration Developer based in Johor Bahru. I connect enterprise systems, cut out manual work, and build AI tools that save businesses real time.">
     <meta property="og:title" content="Najmi Zulhusni | Integration Developer">
-    <meta property="og:description" content="I help businesses eliminate manual technical debt through robust API connections and AI automation.">
+    <meta property="og:description" content="I connect business systems, automate the slow parts, and build practical AI tools — based in JB, open to relocate.">
     <title>Najmi Zulhusni | Integration Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -40,14 +40,6 @@
             -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
 
-        /* Scroll progress */
-        #progress-bar {
-            position: fixed; top: 0; left: 0; height: 3px;
-            background: linear-gradient(90deg, #0071E3, #5E5CE6);
-            z-index: 9999; width: 0%;
-            transition: width 0.08s linear;
-        }
-
         /* Reveal on scroll */
         .reveal {
             opacity: 0;
@@ -70,15 +62,8 @@
         /* Tag chip */
         .chip {
             display: inline-flex; align-items: center;
-            padding: 3px 10px; border-radius: 9999px;
-            font-size: 11px; font-weight: 700;
-            letter-spacing: 0.04em; text-transform: uppercase;
-        }
-
-        /* Project icon area */
-        .proj-icon {
-            height: 160px; border-radius: 1rem; margin-bottom: 1.25rem;
-            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+            padding: 3px 11px; border-radius: 9999px;
+            font-size: 12px; font-weight: 500;
         }
 
         /* Active nav state */
@@ -93,22 +78,20 @@
 </head>
 <body class="antialiased">
 
-<div id="progress-bar"></div>
-
 <!-- ── NAV ─────────────────────────────────────────────── -->
 <nav class="fixed w-full top-0 z-50 glass-nav border-b border-gray-200/60">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <a href="#" class="flex items-center gap-2.5 text-[16px] font-black tracking-tight text-[#1D1D1F]">
-            <div class="w-7 h-7 rounded-lg bg-[#0071E3] flex items-center justify-center text-white text-[10px] font-black select-none">NZ</div>
+        <a href="#" class="text-[16px] font-bold tracking-tight text-[#1D1D1F]">
             Najmi Zulhusni
         </a>
 
         <div class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#6E6E73]">
             <a href="#experience" class="nav-link hover:text-[#1D1D1F] transition-colors">Experience</a>
             <a href="#projects"   class="nav-link hover:text-[#1D1D1F] transition-colors">Projects</a>
-            <a href="#workflow"   class="nav-link hover:text-[#1D1D1F] transition-colors">Methodology</a>
+            <a href="#workflow"   class="nav-link hover:text-[#1D1D1F] transition-colors">How I Work</a>
             <a href="#skills"     class="nav-link hover:text-[#1D1D1F] transition-colors">Skills</a>
+
         </div>
 
         <div class="flex items-center gap-2">
@@ -137,7 +120,7 @@
                 flex-col items-center py-8 gap-6 text-[15px] font-medium text-[#6E6E73]">
         <a href="#experience" class="mobile-link hover:text-[#1D1D1F] transition-colors">Experience</a>
         <a href="#projects"   class="mobile-link hover:text-[#1D1D1F] transition-colors">Projects</a>
-        <a href="#workflow"   class="mobile-link hover:text-[#1D1D1F] transition-colors">Methodology</a>
+        <a href="#workflow"   class="mobile-link hover:text-[#1D1D1F] transition-colors">How I Work</a>
         <a href="#skills"     class="mobile-link hover:text-[#1D1D1F] transition-colors">Skills</a>
         <a href="https://github.com/najmizulhusni" target="_blank" class="mobile-link hover:text-[#1D1D1F] transition-colors">GitHub</a>
         <a href="#contact" class="mobile-link bg-[#1D1D1F] text-white px-8 py-3 rounded-full font-semibold">Let's Connect</a>
@@ -148,25 +131,18 @@
 <!-- ── HERO ─────────────────────────────────────────────── -->
 <section class="max-w-4xl mx-auto px-6 pt-44 pb-24 text-center flex flex-col items-center">
 
-    <!-- Avatar -->
-    <div class="reveal mb-7">
-        <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#0071E3] to-[#5E5CE6] flex items-center justify-center text-white text-2xl font-black shadow-lg select-none">
-            NZ
-        </div>
-    </div>
-
     <!-- Status badge -->
     <div class="reveal reveal-d1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200/80 shadow-sm text-[12px] font-semibold text-[#6E6E73] mb-8 tracking-wide">
         <span class="w-2 h-2 rounded-full bg-green-500 pulse"></span>
-        Johor Bahru &nbsp;·&nbsp; Open to Relocate &nbsp;·&nbsp; Open to Opportunities
+        Based in Johor Bahru &nbsp;·&nbsp; Open to Relocate
     </div>
 
-    <h1 class="reveal reveal-d1 text-[3.25rem] sm:text-[4.5rem] md:text-[5.5rem] font-black text-[#1D1D1F] tracking-tighter leading-[1.0] mb-6">
-        Integration<br/><span class="text-[#6E6E73] font-extralight">Developer.</span>
+    <h1 class="reveal reveal-d1 text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold text-[#1D1D1F] tracking-tight leading-[1.1] mb-6">
+        Integration Developer
     </h1>
 
-    <p class="reveal reveal-d2 text-lg md:text-xl text-[#6E6E73] font-light max-w-xl leading-relaxed mb-10">
-        I eliminate manual bottlenecks by engineering robust API connections, automating enterprise workflows, and deploying practical AI solutions.
+    <p class="reveal reveal-d2 text-lg text-[#6E6E73] max-w-xl leading-relaxed mb-10">
+        Data & Integration Developer at <strong class="text-[#1D1D1F] font-medium">PS Global Consulting</strong>, Malaysia — I connect enterprise systems like NetSuite and SAP, automate workflows on Workato and Latenode, and build AI tools that cut out the manual work.
     </p>
 
     <!-- CTA -->
@@ -204,36 +180,10 @@
 </section>
 
 
-<!-- ── STATS BAR ─────────────────────────────────────────── -->
-<div class="bg-white border-y border-gray-200/70">
-    <div class="max-w-4xl mx-auto px-6 py-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
-            <div class="reveal text-center px-4 sm:px-8">
-                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">3+</p>
-                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">iPaaS Platforms</p>
-            </div>
-            <div class="reveal reveal-d1 text-center px-4 sm:px-8">
-                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">5+</p>
-                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Projects Built</p>
-            </div>
-            <div class="reveal reveal-d2 text-center px-4 sm:px-8 mt-6 md:mt-0">
-                <p class="text-3xl font-black text-[#1D1D1F] tracking-tight">20%</p>
-                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Manual Time Cut</p>
-            </div>
-            <div class="reveal reveal-d3 text-center px-4 sm:px-8 mt-6 md:mt-0">
-                <p class="text-3xl font-black text-green-600 tracking-tight">#1</p>
-                <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest mt-1">Best Project Q4</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- ── EXPERIENCE ────────────────────────────────────────── -->
 <section id="experience" class="py-28 max-w-5xl mx-auto px-6">
     <div class="reveal text-center mb-16">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Career</p>
-        <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Experience</h2>
+        <h2 class="text-4xl font-bold tracking-tight text-[#1D1D1F]">Experience</h2>
     </div>
 
     <div class="relative border-l-2 border-gray-200 ml-4 md:ml-8 space-y-10">
@@ -245,7 +195,7 @@
                 <div class="w-2 h-2 bg-white rounded-full"></div>
             </div>
 
-            <div class="reveal bg-white rounded-[2rem] p-8 md:p-12 shadow-card card-lift border border-gray-100">
+            <div class="reveal bg-white rounded-2xl p-8 md:p-12 shadow-card card-lift border border-gray-100">
                 <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 bg-green-50 text-green-700 border border-green-100 rounded-full uppercase tracking-wider mb-6">
                     <span class="w-1.5 h-1.5 rounded-full bg-green-500 pulse"></span>
                     Current Role
@@ -259,22 +209,22 @@
                     </div>
 
                     <div class="lg:w-[65%]">
-                        <ul class="space-y-4 text-[#6E6E73] text-[15px] font-light leading-relaxed mb-8">
+                        <ul class="space-y-4 text-[#6E6E73] text-[15px] leading-relaxed mb-8">
                             <li class="flex gap-3">
-                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">API Workflow Design:</strong> End-to-end API integrations across Workato, Latenode, and Celigo with OAuth 2.0 / Token-Based auth and robust error handling.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">API Integrations:</strong> Design and build end-to-end API workflows on Workato, Latenode, and Celigo — covering OAuth 2.0 authentication, error handling, and retry logic.</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">Enterprise Data Sync:</strong> Build inbound/outbound interfaces syncing data between NetSuite and SAP with strict validation logic to ensure consistency.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Enterprise Data Sync:</strong> Build inbound and outbound interfaces to move data between NetSuite and SAP, with field-level validation to keep records consistent.</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">PoC & Collaboration:</strong> Develop Proofs of Concept, gather stakeholder requirements, and support full UAT cycles.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">PoC & Stakeholder Work:</strong> Build proofs of concept to test feasibility before full build, gather requirements directly from business stakeholders, and support UAT.</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-[#0071E3] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">Technical Documentation:</strong> Author comprehensive docs covering payload structures, field mapping tables, and endpoint specs for compliance.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Technical Documentation:</strong> Write clear docs covering payload structures, field mapping tables, and endpoint specs — so handovers and compliance checks go smoothly.</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2">
@@ -294,7 +244,7 @@
         <div class="relative pl-8 md:pl-12 group">
             <div class="absolute -left-[11px] top-10 w-5 h-5 bg-white border-4 border-gray-200 rounded-full group-hover:border-[#0071E3] transition-colors duration-300"></div>
 
-            <div class="reveal bg-white rounded-[2rem] p-8 md:p-12 shadow-card card-lift border border-gray-100">
+            <div class="reveal bg-white rounded-2xl p-8 md:p-12 shadow-card card-lift border border-gray-100">
                 <div class="flex flex-col lg:flex-row gap-10">
                     <div class="lg:w-[35%] shrink-0">
                         <p class="text-[#6E6E73] font-bold text-[11px] uppercase tracking-widest mb-2">Jul 2024 – Jan 2025</p>
@@ -309,22 +259,25 @@
                                 <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest">Manual Time</p>
                             </div>
                             <div class="bg-green-50 rounded-2xl p-5 border border-green-100">
-                                <p class="text-xl font-black text-green-700 mb-0.5">🏆 Winner</p>
+                                <p class="text-xl font-black text-green-700 mb-0.5 flex items-center gap-1.5">
+                                    <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L12 14.4l-4.8 2.4.9-5.3L4.2 7.7l5.4-.8L12 2z"/></svg>
+                                    Winner
+                                </p>
                                 <p class="text-[11px] uppercase font-bold text-[#6E6E73] tracking-widest">Best Project Q4</p>
                             </div>
                         </div>
-                        <ul class="space-y-4 text-[#6E6E73] text-[15px] font-light leading-relaxed">
+                        <ul class="space-y-4 text-[#6E6E73] text-[15px] leading-relaxed">
                             <li class="flex gap-3">
-                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">SUPRA Project:</strong> Contributed to direct reduction of past-due USD, earning Best Project at the KLSSC Q4 Town Hall.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">SUPRA Project:</strong> Worked on reducing overdue receivables as part of the SUPRA initiative — the project won Best Project at the KLSSC Q4 Town Hall.</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">Automation Engine:</strong> Built automated Power BI dashboards and Excel macros that eliminated manual data tracking entirely.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Dashboard & Automation:</strong> Built Power BI dashboards and Excel macros so the team no longer had to track data manually — cut reporting time by 20%.</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="text-[#6E6E73] shrink-0 mt-1">→</span>
-                                <span><strong class="text-[#1D1D1F] font-semibold">Process Improvement:</strong> Assisted with Procure-to-Pay (P2P) and supply chain optimizations to improve data accuracy across teams.</span>
+                                <span class="text-gray-400 shrink-0 mt-1">–</span>
+                                <span><strong class="text-[#1D1D1F] font-semibold">Process Work:</strong> Supported Procure-to-Pay (P2P) and supply chain process improvements to clean up data quality across the team.</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2 mt-6">
@@ -346,19 +299,43 @@
 <section id="projects" class="py-28 bg-white border-y border-gray-200/70">
     <div class="max-w-5xl mx-auto px-6">
         <div class="reveal text-center mb-16">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Portfolio</p>
-            <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Projects</h2>
+            <h2 class="text-4xl font-bold tracking-tight text-[#1D1D1F]">Projects</h2>
         </div>
+
+        <!--
+            ═══════════════════════════════════════════════════
+            TO ADD A NEW PROJECT — copy the block below and
+            paste it before the closing </div> of this grid.
+            The grid auto-wraps: 1 col mobile, 2 tablet, 3 desktop.
+            ───────────────────────────────────────────────────
+            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-2xl p-8 flex flex-col card-lift">
+                <div class="flex-1">
+                    <h3 class="text-[18px] font-bold mb-2 tracking-tight text-[#1D1D1F]">Project Title</h3>
+                    <p class="text-[#6E6E73] text-[14px] leading-relaxed mb-5">
+                        Short description of what it does and the problem it solves.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Tech 1</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Tech 2</span>
+                    </div>
+                </div>
+                <a href="YOUR_URL" target="_blank" rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white border border-gray-200 text-[#1D1D1F] font-semibold text-[14px] hover:bg-gray-50 transition-colors shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    View Live Site
+                </a>
+            </div>
+            ═══════════════════════════════════════════════════
+        -->
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- Project 1 -->
-            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-[2rem] p-8 flex flex-col card-lift">
-                <div class="proj-icon bg-gradient-to-br from-purple-100 to-blue-100 text-4xl">🏡</div>
+            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-2xl p-8 flex flex-col card-lift">
                 <div class="flex-1">
                     <h3 class="text-[18px] font-bold mb-2 tracking-tight text-[#1D1D1F]">Lavender Villa Melaka</h3>
-                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
-                        Full-stack homestay booking engine with real-time pricing, secure database management, and automated WhatsApp guest notifications.
+                    <p class="text-[#6E6E73] text-[14px] leading-relaxed mb-5">
+                        Booking website for a homestay in Melaka. Handles room availability, real-time pricing, and sends automated WhatsApp confirmations to guests after booking.
                     </p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
                         <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">React</span>
@@ -374,12 +351,11 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="reveal reveal-d1 bg-[#F5F5F7] border border-gray-200/80 rounded-[2rem] p-8 flex flex-col card-lift">
-                <div class="proj-icon bg-gradient-to-br from-orange-100 to-yellow-100 text-4xl">🧾</div>
+            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-2xl p-8 flex flex-col card-lift">
                 <div class="flex-1">
                     <h3 class="text-[18px] font-bold mb-2 tracking-tight text-[#1D1D1F]">SenangPOS</h3>
-                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
-                        Custom POS web app for local vendors. Replaces manual Excel ledgers with digital sales tracking, reports, and interactive charts.
+                    <p class="text-[#6E6E73] text-[14px] leading-relaxed mb-5">
+                        A point-of-sale web app built for Pasar Tani vendors. Replaces pen-and-paper and Excel with digital sales tracking, daily reports, and charts.
                     </p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
                         <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">JavaScript</span>
@@ -395,24 +371,23 @@
             </div>
 
             <!-- Project 3 - AI Bot -->
-            <div class="reveal reveal-d2 bg-[#1D1D1F] border border-gray-800 rounded-[2rem] p-8 flex flex-col card-lift">
-                <div class="proj-icon bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-900/30 text-4xl" style="border-radius:1rem;">🤖</div>
+            <div class="reveal bg-[#F5F5F7] border border-gray-200/80 rounded-2xl p-8 flex flex-col card-lift">
                 <div class="flex-1">
                     <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-[18px] font-bold tracking-tight text-white">SME-Go AI Bot</h3>
-                        <span class="chip bg-blue-500/20 text-blue-300 border border-blue-500/30">AI</span>
+                        <h3 class="text-[18px] font-bold tracking-tight text-[#1D1D1F]">SME-Go AI Bot</h3>
+                        <span class="chip bg-blue-50 text-blue-700 border border-blue-100">AI</span>
                     </div>
-                    <p class="text-gray-400 text-[14px] font-light leading-relaxed mb-5">
-                        Telegram AI bot that parses natural language orders into structured JSON, auto-generates LHDN-compliant invoices with DuitNow QR, and syncs to Google Sheets.
+                    <p class="text-[#6E6E73] text-[14px] leading-relaxed mb-5">
+                        A Telegram bot for SME owners. Send an order in plain Malay or English, and it generates an LHDN-compliant invoice with a DuitNow QR code — then logs everything to Google Sheets automatically.
                     </p>
                     <div class="flex flex-wrap gap-1.5 mb-6">
-                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">LangChain</span>
-                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Claude API</span>
-                        <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Telegram</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">LangChain</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Claude API</span>
+                        <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">Telegram</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 py-3 px-4 rounded-xl bg-gray-900/60 border border-gray-700 font-mono text-[12px] text-gray-400">
-                    <span class="text-green-400 font-bold">›</span> "Ali order 50 nasi" → <span class="text-blue-400">JSON</span>
+                <div class="flex items-center gap-2 py-3 px-4 rounded-xl bg-white border border-gray-200 font-mono text-[12px] text-[#6E6E73]">
+                    <span class="text-[#0071E3] font-bold">›</span> "Ali order 50 nasi" → <span class="text-[#0071E3]">JSON</span>
                 </div>
             </div>
 
@@ -421,45 +396,94 @@
 </section>
 
 
-<!-- ── METHODOLOGY ───────────────────────────────────────── -->
-<section id="workflow" class="py-28 max-w-5xl mx-auto px-6">
-    <div class="reveal text-center mb-16">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Process</p>
-        <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F] mb-3">Engineering Methodology</h2>
-        <p class="text-lg text-[#6E6E73] font-light max-w-xl mx-auto">How I transform manual business bottlenecks into fully autonomous systems.</p>
+<!-- ── HOW I WORK ─────────────────────────────────────────── -->
+<section id="workflow" class="py-24 max-w-5xl mx-auto px-6">
+    <div class="reveal text-center mb-12">
+        <h2 class="text-4xl font-bold tracking-tight text-[#1D1D1F] mb-3">How I Work</h2>
+        <p class="text-base text-[#6E6E73] max-w-lg mx-auto">
+            A real project — from problem to working automation.
+        </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="reveal bg-white p-8 rounded-[2rem] border border-gray-100 shadow-card card-lift">
-            <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center text-[15px] font-black text-[#6E6E73] mb-6">01</div>
-            <h3 class="text-[17px] font-bold text-[#1D1D1F] mb-3">Isolate the Gap</h3>
-            <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed">
-                Identify heavy, manual processes. E.g., a business owner wastes hours manually typing PDF invoices and updating Excel sheets for every WhatsApp order.
+    <!-- Case study card -->
+    <div class="reveal bg-white rounded-2xl border border-gray-200 shadow-card overflow-hidden">
+
+        <!-- Header -->
+        <div class="px-8 pt-7 pb-6 border-b border-gray-100">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Case Study — SME Order Automation</p>
+            <p class="text-[17px] font-bold text-[#1D1D1F] leading-snug max-w-2xl">
+                A Melaka food vendor was spending 2+ hours a day copying WhatsApp orders into Excel and typing invoices by hand. I automated the whole chain in a weekend.
             </p>
         </div>
 
-        <div class="reveal reveal-d1 bg-white p-8 rounded-[2rem] border border-gray-100 shadow-card card-lift">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[15px] font-black text-[#0071E3] mb-6">02</div>
-            <h3 class="text-[17px] font-bold text-[#1D1D1F] mb-3">AI Logic Layer</h3>
-            <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-4">
-                Build a Telegram AI bot that parses natural language orders into structured JSON data instantly.
-            </p>
-            <div class="bg-[#F5F5F7] p-3 rounded-xl border border-gray-100 font-mono text-[11px] text-[#6E6E73]">
-                "Ali order 50 nasi" → <span class="text-[#0071E3]">&#123; qty: 50 &#125;</span>
-            </div>
-        </div>
+        <!-- Split body -->
+        <div class="grid grid-cols-1 md:grid-cols-2">
 
-        <div class="reveal reveal-d2 bg-[#1D1D1F] p-8 rounded-[2rem] shadow-card card-lift">
-            <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-[15px] font-black text-[#0071E3] mb-6">03</div>
-            <h3 class="text-[17px] font-bold text-white mb-3">Automate Everything</h3>
-            <p class="text-gray-400 text-[14px] font-light leading-relaxed mb-6">
-                LangChain + Claude API auto-generates LHDN-compliant invoices with DuitNow QR codes and updates Google Sheets — zero manual input.
-            </p>
-            <div class="flex gap-2 flex-wrap">
-                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">LangChain</span>
-                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Claude API</span>
-                <span class="chip bg-gray-800 text-gray-300 border border-gray-700">Apps Script</span>
+            <!-- Left: what I built -->
+            <div class="p-8 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col justify-between">
+                <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-5">What I built</p>
+                    <ul class="space-y-5">
+                        <li class="flex gap-3.5">
+                            <span class="text-[13px] font-bold text-gray-300 shrink-0 w-5 pt-px">1.</span>
+                            <p class="text-[14px] text-[#6E6E73] leading-relaxed">A Telegram bot that reads orders in plain Malay or English and extracts structured data via Claude API</p>
+                        </li>
+                        <li class="flex gap-3.5">
+                            <span class="text-[13px] font-bold text-gray-300 shrink-0 w-5 pt-px">2.</span>
+                            <p class="text-[14px] text-[#6E6E73] leading-relaxed">A PDF generator that builds LHDN-compliant invoices with a DuitNow QR attached</p>
+                        </li>
+                        <li class="flex gap-3.5">
+                            <span class="text-[13px] font-bold text-gray-300 shrink-0 w-5 pt-px">3.</span>
+                            <p class="text-[14px] text-[#6E6E73] leading-relaxed">Google Sheets sync — every order is logged automatically, no manual entry needed</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-wrap gap-1.5 mt-8">
+                    <span class="chip bg-[#F5F5F7] border border-gray-200 text-[#1D1D1F]">LangChain</span>
+                    <span class="chip bg-[#F5F5F7] border border-gray-200 text-[#1D1D1F]">Claude API</span>
+                    <span class="chip bg-[#F5F5F7] border border-gray-200 text-[#1D1D1F]">Telegram Bot API</span>
+                    <span class="chip bg-[#F5F5F7] border border-gray-200 text-[#1D1D1F]">Apps Script</span>
+                </div>
             </div>
+
+            <!-- Right: system log -->
+            <div class="p-8 bg-[#1D1D1F]">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-gray-600 mb-5">Live run</p>
+                <div class="font-mono text-[12px] space-y-2 leading-relaxed">
+                    <p>
+                        <span class="text-gray-600">09:14:21</span>
+                        <span class="text-gray-500 ml-3">message received from Ali</span>
+                    </p>
+                    <p class="pl-14 text-gray-300">"order 50 nasi lemak @rm5"</p>
+
+                    <p class="pt-1">
+                        <span class="text-gray-600">09:14:22</span>
+                        <span class="text-[#0071E3] ml-3">parsing intent</span>
+                    </p>
+                    <p class="pl-14 text-gray-500">customer=Ali · item=nasi lemak · qty=50 · unit=RM 5.00</p>
+
+                    <p class="pt-1">
+                        <span class="text-gray-600">09:14:23</span>
+                        <span class="text-[#0071E3] ml-3">generating INV-0841</span>
+                    </p>
+                    <p class="pl-14 text-gray-500">total=RM 250.00 · DuitNow QR attached</p>
+
+                    <p class="pt-1">
+                        <span class="text-gray-600">09:14:24</span>
+                        <span class="text-green-400 ml-3">sheets row 47 written</span>
+                    </p>
+                    <p class="pt-0.5">
+                        <span class="text-gray-600">09:14:24</span>
+                        <span class="text-green-400 ml-3">confirmation sent to Ali</span>
+                    </p>
+
+                    <div class="pt-5 mt-1 border-t border-white/8 flex items-start gap-2.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0 mt-1.5"></span>
+                        <p class="text-[12px] text-gray-500 leading-snug">2h 10min saved per day · runs on every order · no human in the loop</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -469,21 +493,20 @@
 <section id="skills" class="py-28 bg-white border-t border-gray-200/70">
     <div class="max-w-5xl mx-auto px-6">
         <div class="reveal text-center mb-16">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Toolkit</p>
-            <h2 class="text-4xl font-black tracking-tight text-[#1D1D1F]">Capabilities</h2>
+                <h2 class="text-4xl font-bold tracking-tight text-[#1D1D1F]">Skills</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
 
             <!-- Education — wide -->
-            <div class="reveal md:col-span-7 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift flex flex-col justify-between">
+            <div class="reveal md:col-span-7 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-2xl shadow-card flex flex-col justify-between">
                 <div>
                     <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-2">Education</p>
                     <h3 class="text-xl font-bold text-[#1D1D1F] mb-0.5">B.S. Computer Science</h3>
                     <p class="text-[#1D1D1F] font-medium text-[14px] mb-1">Graphics &amp; Multimedia Software</p>
                     <p class="text-[#6E6E73] text-[13px] mb-5">Universiti Teknologi Malaysia (UTM) · Oct 2021 – Oct 2025</p>
-                    <p class="text-[#6E6E73] text-[14px] font-light leading-relaxed mb-5">
-                        My CS + multimedia background is a unique edge. I build intuitive Power BI dashboards and UIs that make complex data easy to digest — not just backend pipelines.
+                    <p class="text-[#6E6E73] text-[14px] leading-relaxed mb-5">
+                        Studying CS with a multimedia focus means I think about both the technical side and how things look. I build Power BI dashboards and interfaces that people can actually understand — not just pipelines running in the background.
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-2">
@@ -494,31 +517,31 @@
             </div>
 
             <!-- Core Stack — narrow -->
-            <div class="reveal reveal-d1 md:col-span-5 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+            <div class="reveal reveal-d1 md:col-span-5 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-2xl shadow-card">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-5">Core Stack</p>
                 <div class="space-y-4">
                     <div>
                         <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Integration (iPaaS)</p>
-                        <p class="text-[13px] text-[#6E6E73] font-light">Workato · Latenode · Celigo · UiPath</p>
+                        <p class="text-[13px] text-[#6E6E73]">Workato · Latenode · Celigo · UiPath</p>
                     </div>
                     <div class="h-px bg-gray-200"></div>
                     <div>
                         <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Data & Analytics</p>
-                        <p class="text-[13px] text-[#6E6E73] font-light">Power BI · SQL · Excel · Data Modeling</p>
+                        <p class="text-[13px] text-[#6E6E73]">Power BI · SQL · Excel · Data Modeling</p>
                     </div>
                     <div class="h-px bg-gray-200"></div>
                     <div>
                         <p class="text-[13px] font-bold text-[#1D1D1F] mb-1">Enterprise Systems</p>
-                        <p class="text-[13px] text-[#6E6E73] font-light">NetSuite · SAP · REST APIs</p>
+                        <p class="text-[13px] text-[#6E6E73]">NetSuite · SAP · REST APIs</p>
                     </div>
                 </div>
             </div>
 
             <!-- AI Integration -->
-            <div class="reveal md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+            <div class="reveal md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-2xl shadow-card">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">AI Integration</p>
-                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
-                    Integrating powerful AI models into daily workflows for document extraction and automation.
+                <p class="text-[14px] text-[#6E6E73] leading-relaxed mb-5">
+                    Connecting AI models to real workflows — reading documents, processing data, and handling tasks that used to need a human to do manually.
                 </p>
                 <div class="flex flex-wrap gap-1.5">
                     <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">LangChain</span>
@@ -529,10 +552,10 @@
             </div>
 
             <!-- App Dev -->
-            <div class="reveal reveal-d1 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+            <div class="reveal reveal-d1 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-2xl shadow-card">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">App Development</p>
-                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
-                    Building functional tools, POS systems, and dashboards with modern frameworks.
+                <p class="text-[14px] text-[#6E6E73] leading-relaxed mb-5">
+                    Building web tools people use day-to-day — booking sites, POS systems, and internal dashboards.
                 </p>
                 <div class="flex flex-wrap gap-1.5">
                     <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">React</span>
@@ -543,10 +566,10 @@
             </div>
 
             <!-- Google Ecosystem -->
-            <div class="reveal reveal-d2 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-[2rem] shadow-card card-lift">
+            <div class="reveal reveal-d2 md:col-span-4 bg-[#F5F5F7] border border-gray-200/80 p-8 rounded-2xl shadow-card">
                 <p class="text-[11px] font-bold uppercase tracking-widest text-[#6E6E73] mb-3">Google Ecosystem</p>
-                <p class="text-[14px] text-[#6E6E73] font-light leading-relaxed mb-5">
-                    Deep expertise in custom tools and seamless integrations across Google Workspace.
+                <p class="text-[14px] text-[#6E6E73] leading-relaxed mb-5">
+                    Building custom workflows and internal tools on top of Google Workspace — from no-code apps to scripted automations.
                 </p>
                 <div class="flex flex-wrap gap-1.5">
                     <span class="chip bg-white border border-gray-200 text-[#1D1D1F]">AppSheet</span>
@@ -564,9 +587,8 @@
 <section id="contact" class="py-32 bg-[#1D1D1F]">
     <div class="max-w-3xl mx-auto px-6 text-center">
         <div class="reveal">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-500 mb-4">Get In Touch</p>
-            <h2 class="text-5xl md:text-6xl font-black mb-5 tracking-tight text-white">Let's build.</h2>
-            <p class="text-gray-400 text-lg mb-12 font-light">Open to full-time roles and consulting projects. I respond within 24 hours.</p>
+            <h2 class="text-5xl md:text-6xl font-bold mb-5 tracking-tight text-white">Let's work together.</h2>
+            <p class="text-gray-400 text-lg mb-12">Open to full-time roles and consulting projects. I respond within 24 hours.</p>
         </div>
 
         <div class="reveal reveal-d1 flex flex-col sm:flex-row justify-center items-stretch gap-4">
@@ -592,10 +614,7 @@
 <!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer class="py-10 bg-white border-t border-gray-200/70">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div class="flex items-center gap-2">
-            <div class="w-6 h-6 rounded-md bg-[#0071E3] flex items-center justify-center text-white text-[9px] font-black select-none">NZ</div>
-            <span class="text-[15px] font-bold text-[#1D1D1F]">Najmi Zulhusni</span>
-        </div>
+        <span class="text-[15px] font-bold text-[#1D1D1F]">Najmi Zulhusni</span>
         <p class="text-[13px] text-[#6E6E73]">© 2026 Muhammad Najmi Zulhusni · Integration Developer</p>
         <div class="flex items-center gap-4">
             <a href="https://www.linkedin.com/in/najmi-zulhusni/" target="_blank" rel="noopener"
@@ -625,13 +644,6 @@
             mobileMenu.classList.remove('flex');
         });
     });
-
-    // ── Scroll progress bar
-    const progressBar = document.getElementById('progress-bar');
-    window.addEventListener('scroll', () => {
-        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-        progressBar.style.width = pct + '%';
-    }, { passive: true });
 
     // ── Scroll reveal (IntersectionObserver)
     const revealObserver = new IntersectionObserver((entries) => {
