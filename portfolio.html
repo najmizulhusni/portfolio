@@ -8,6 +8,8 @@
     <meta property="og:description" content="I connect business systems, automate the slow parts, and build practical AI tools — based in JB, open to relocate.">
     <title>Najmi Zulhusni | Integration Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -35,9 +37,12 @@
         body { background-color: #F5F5F7; color: #1D1D1F; }
 
         .glass-nav {
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            /* Force own GPU compositing layer — prevents repaint on every scroll frame */
+            will-change: transform;
+            transform: translateZ(0);
         }
 
         /* Reveal on scroll */
@@ -45,6 +50,7 @@
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+            will-change: opacity, transform;
         }
         .reveal.visible { opacity: 1; transform: none; }
         .reveal-d1 { transition-delay: 0.08s; }
@@ -52,7 +58,10 @@
         .reveal-d3 { transition-delay: 0.24s; }
 
         /* Card hover */
-        .card-lift { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1); }
+        .card-lift {
+            transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+            will-change: transform;
+        }
         .card-lift:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
 
         /* Pulsing green dot */
@@ -70,10 +79,20 @@
         .nav-link { position: relative; }
         .nav-link.active { color: #1D1D1F !important; }
 
+        /* Pulse - composited on GPU */
+        .pulse { will-change: opacity; }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #F5F5F7; }
         ::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 3px; }
+
+        /* Respect user's motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; will-change: auto; }
+            .card-lift { transition: none; }
+            .pulse { animation: none; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -653,6 +672,10 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 revealObserver.unobserve(entry.target);
+                // Release GPU layer once animation is done — frees VRAM
+                entry.target.addEventListener('transitionend', () => {
+                    entry.target.style.willChange = 'auto';
+                }, { once: true });
             }
         });
     }, { threshold: 0.1 });
